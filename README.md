@@ -2,11 +2,11 @@
 
 Arguments:
 
--h, --help (Show this help message and exit)
--s SOURCE, --source SOURCE (Source directory.)
--a ARCHIVE, --archive ARCHIVE (Archive directory.)
--d DAYS, --days DAYS  (Days old.)
--r REGEX, --regex REGEX (Regular expression. Default = ".*")
+-h, --help (Show this help message and exit) 
+-s SOURCE, --source SOURCE (Source directory.) 
+-a ARCHIVE, --archive ARCHIVE (Archive directory.)  
+-d DAYS, --days DAYS  (Days old.)   
+-r REGEX, --regex REGEX (Regular expression. Default = ".*")  
 
 
 Usage:
