@@ -15,11 +15,11 @@ optional arguments:
 
 Examples:
 
-Archive all files older than 90 days.<br>
+Archive all files older than 90 days.
 ```
-./archive_files.py -s /Users/larry/Desktop/stuff -a /Users/larry/storage -d 90<br><br> 
+./archive_files.py -s /Users/larry/Desktop/stuff -a /Users/larry/storage -d 90
 ```
-Archive all .txt files older than 90 days.<br>
+Archive all .txt files older than 90 days.
 ```
-./archive_files.py -s /Users/larry/Desktop/stuff -a /Users/larry/storage -d 90 -r '.txt$'<br><br>
+./archive_files.py -s /Users/larry/Desktop/stuff -a /Users/larry/storage -d 90 -r '.txt$'
 ```
