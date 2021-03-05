@@ -8,7 +8,7 @@ import datetime
 import os
 import time
 import re
-import shutil
+
 
 parser = argparse.ArgumentParser(description='Archive and move files (using gzip).')
 
@@ -60,7 +60,11 @@ if os.path.exists(args.source):
                         full_path_source_archived_file=gzip_file(full_path)
                         destination_archived_file = os.path.join(full_path_source_archived_file.split('/')[-1])
                         full_path_destination_archived_file = os.path.join(args.archive, destination_archived_file)
-                        os.rename(full_path_source_archived_file, full_path_destination_archived_file)
+                        try:
+                            os.rename(full_path_source_archived_file, full_path_destination_archived_file)
+                        except PermissionError as err:
+                            print('Error: ', err)
+                            pass
     else:
         print('Invalid archive directory: ' + args.archive)
         exit(1)
