@@ -1,17 +1,25 @@
 # simple_archive
 
-optional arguments:<br>
-  -h, --help (Show this help message and exit)<br>
-  -s SOURCE, --source SOURCE (Source directory.)<br>
-  -a ARCHIVE, --archive ARCHIVE (Archive directory.)<br>
-  -d DAYS, --days DAYS  (Days old.)<br>
-  -r REGEX, --regex REGEX (Regular expression. Default = ".*")<br><br>
+optional arguments:
 
-Examples:<br>
+  -h, --help (Show this help message and exit)
+
+  -s SOURCE, --source SOURCE (Source directory.)
+
+  -a ARCHIVE, --archive ARCHIVE (Archive directory.)
+
+  -d DAYS, --days DAYS  (Days old.)
+
+  -r REGEX, --regex REGEX (Regular expression. Default = ".*")
+
+
+Examples:
 
 Archive all files older than 90 days.<br>
+```
 ./archive_files.py -s /Users/larry/Desktop/stuff -a /Users/larry/storage -d 90<br><br> 
-
+```
 Archive all .txt files older than 90 days.<br>
+```
 ./archive_files.py -s /Users/larry/Desktop/stuff -a /Users/larry/storage -d 90 -r '.txt$'<br><br>
-
+```
