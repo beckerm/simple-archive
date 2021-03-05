@@ -8,6 +8,7 @@ import datetime
 import os
 import time
 import re
+import shutil
 
 parser = argparse.ArgumentParser(description='Archive and move files (using gzip).')
 
@@ -27,11 +28,9 @@ days_old = int(args.days)
 def gzip_cost_file(file_to_zip):
     zipped_file = file_to_zip + '.gz'
     try:
-        fp = open(file_to_zip,"rb")
-        data = fp.read()
-        bindata = bytearray(data)
-        with gzip.open(zipped_file, "wb") as f:
-            f.write(bindata)
+        with open(file_to_zip, 'rb') as f_in:   
+            with gzip.open(zipped_file, 'wb') as f_out:
+                f_out.writelines(f_in)
     except IOError as err:
         print('Error: ', err)
         pass
@@ -43,6 +42,7 @@ def gzip_cost_file(file_to_zip):
                 print('Error: ', err)
                 pass
         return zipped_file
+
 
  
 if os.path.exists(args.source):
