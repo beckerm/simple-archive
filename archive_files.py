@@ -25,7 +25,7 @@ now   = time.time()
 days_old = int(args.days)
 
 
-def gzip_cost_file(file_to_zip):
+def gzip_file(file_to_zip):
     zipped_file = file_to_zip + '.gz'
     try:
         with open(file_to_zip, 'rb') as f_in:   
@@ -57,7 +57,7 @@ if os.path.exists(args.source):
                 if file_regex.search(f):
 
                     if os.stat(full_path).st_mtime < now - (days_old * 86400):
-                        full_path_source_archived_file=gzip_cost_file(full_path)
+                        full_path_source_archived_file=gzip_file(full_path)
                         destination_archived_file = os.path.join(full_path_source_archived_file.split('/')[-1])
                         full_path_destination_archived_file = os.path.join(args.archive, destination_archived_file)
                         os.rename(full_path_source_archived_file, full_path_destination_archived_file)
