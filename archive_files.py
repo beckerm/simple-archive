@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
  
 import argparse
@@ -8,6 +8,7 @@ import datetime
 import os
 import time
 import re
+import shutil
 
 
 parser = argparse.ArgumentParser(description='Archive and move files (using gzip).')
@@ -61,16 +62,16 @@ if os.path.exists(args.source):
                         destination_archived_file = os.path.join(full_path_source_archived_file.split('/')[-1])
                         full_path_destination_archived_file = os.path.join(args.archive, destination_archived_file)
                         try:
-                            os.rename(full_path_source_archived_file, full_path_destination_archived_file)
+                            shutil.move(full_path_source_archived_file, full_path_destination_archived_file)
                         except PermissionError as err:
                             print('Error: ', err)
                             pass
     else:
-        print('Invalid archive directory: ' + args.archive)
+        print('Invalid archive directory: ', args.archive)
         exit(1)
 
 else:
-    print('Invalid source directory: ' + args.source)
+    print('Invalid source directory: ', args.source)
     exit(1)
 
 
