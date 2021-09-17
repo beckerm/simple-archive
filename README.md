@@ -1,4 +1,4 @@
-# simple_archive
+# simple-archive
 
 Arguments:
 
@@ -17,5 +17,5 @@ Archive all files older than 90 days.
 ```
 Archive all .txt files older than 90 days.
 ```
-./archive_files.py -s /Users/larry/Desktop/stuff -a /Users/larry/storage -d 90 -r '.txt$'
+./archive_files.py -s /Users/larry/Desktop/stuff -a /Users/larry/storage -d 90 -r '\.txt$'
 ```
